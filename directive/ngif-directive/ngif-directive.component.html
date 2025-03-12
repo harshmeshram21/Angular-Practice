@@ -1,0 +1,85 @@
+<h1 class="text-center">*ngif-directive</h1>
+<div class="div-container">
+  <div>
+    <div class="box" *ngIf="isDiv1Visible">box-1</div>
+  </div>
+  <div>
+    <div *ngIf="isDiv2Visible" class="box">box-2</div>
+  </div>
+  <div><div *ngIf="val1 == val2" class="box">box-3</div></div>
+  <div><div *ngIf="isCheck" class="box">box-4</div></div>
+</div>
+<br />
+<div class="btn-container">
+  <div>
+    <button (click)="showBtn()" style="margin-right: 20px">show</button>
+    <button (click)="removeBtn()">remove</button>
+  </div>
+  <div>
+    <button (click)="toggleBtn()">toggle</button>
+  </div>
+  <div>
+    <input
+      [(ngModel)]="val1"
+      style="width: 50px"
+      type="text"
+      placeholder="val1"
+    />
+    <input
+      [(ngModel)]="val2"
+      style="width: 50px"
+      type="text"
+      placeholder="val2"
+    />
+  </div>
+
+  <div><input [(ngModel)]="isCheck" type="checkbox" /></div>
+</div>
+<br /><br />
+<h1 class="text-center">*ngfor-directive</h1>
+
+<div class="div-container">
+  <div>
+    <ul>
+      <li *ngFor="let city of cities">{{ city }}</li>
+    </ul>
+  </div>
+  <div>
+    <div *ngFor="let cityName of cities">{{ cityName }}</div>
+  </div>
+  <div>
+    <select>
+      <option *ngFor="let shehar of cities" value="{{ shehar }}">
+        {{ shehar }}
+      </option>
+    </select>
+  </div>
+</div>
+<br /><br />
+
+<div>
+  <table>
+    <caption style="text-align: center; caption-side: Top">
+      Displaying using *ngFor
+    </caption>
+    <thead>
+      <th>ID</th>
+      <th>Name</th>
+      <th>City</th>
+      <th>Status</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let std of studentList; let srNo = index">
+        <td>{{ srNo }}</td>
+        <td>{{ std.name }}</td>
+        <td>{{ std.city }}</td>
+        <td>
+          <span *ngIf="std.isActive">Active</span>
+          <span *ngIf="!std.isActive">Deactive</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br /><br />

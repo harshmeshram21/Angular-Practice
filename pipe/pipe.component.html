@@ -1,0 +1,42 @@
+<div style="height: 200px">
+  <div class="bg-info" style="height: 100px">
+    <h5>
+      a pipe is a feature that allows you to transform data in your templates.
+      Pipes can be used to format, filter, or manipulate data before it is
+      displayed to the user. They are a powerful way to display data in
+      different formats without changing the underlying data structure.
+    </h5>
+  </div>
+</div>
+
+<div>
+  <h2>Built-in Pipes in Angular</h2>
+
+  <h3>String Pipes</h3>
+  <p>Original: {{ message }}</p>
+  <p>Uppercase: {{ message | uppercase }}</p>
+  <p>Lowercase: {{ message | lowercase }}</p>
+  <p>Title Case: {{ message | titlecase }}</p>
+
+  <h3>Date Pipe</h3>
+  <p>Original: {{ today }}</p>
+  <p>Today: {{ today | date }}</p>
+  <p>Short Date: {{ today | date : "short" }}</p>
+  <p>Full Date: {{ today | date : "fullDate" }}</p>
+
+  <h3>Currency Pipe</h3>
+  <p>Price: {{ price | currency : "USD" : "symbol" }}</p>
+  <p>Price: {{ price | currency : "INR" : "symbol" }}</p>
+
+  <h3>Decimal Pipe</h3>
+  <p>Number: {{ number | number : "1.2-3" }}</p>
+
+  <h3>Percent Pipe</h3>
+  <p>Percentage: {{ percentage | percent }}</p>
+
+  <h3>JSON Pipe</h3>
+  <p>Data: {{ jsonData | json }}</p>
+
+  <h3>Slice Pipe</h3>
+  <p>Array Slice: {{ numbersArray | slice : 1 : 4 }}</p>
+</div>

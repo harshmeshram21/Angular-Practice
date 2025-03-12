@@ -1,0 +1,23 @@
+<h4 class="text-center">{{ message }}(ts to html)</h4>
+<h4 class="text-center" [class]="text_color">
+  text color via property binding
+</h4>
+<br />
+<h5 class="text-center">
+  below button and text is doing event binding (html to ts )
+</h5>
+<div class="div_center">
+  <button (click)="showAlert('text from button')">click me!</button>
+</div>
+<br />
+<div class="div_center">
+  <span (click)="showAlert('text from span')">click me </span>
+</div>
+<h4 class="text-center">{{ currentDate }}</h4>
+<br /><br />
+
+<div class="div_center">
+  <button class="btn btn-primary" [routerLink]="'/two-way-data-binding'">
+    Go To two-way-data-binding [routerLink]
+  </button>
+</div>

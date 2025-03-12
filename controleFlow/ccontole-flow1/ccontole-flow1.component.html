@@ -1,0 +1,70 @@
+<div style="height: 200px">
+  <div class="bg-info" style="height: 100px">
+    <h2>Control-flow Statements</h2>
+    <h4>&#64;if &#64;else &#64;else-if</h4>
+  </div>
+</div>
+
+<div class="div-conatiner">
+  <div>
+    @if (isDiv1Active) {
+    <div class="box bg-info">box-1</div>
+    }
+  </div>
+  <div>
+    @if(isDiv2Active){
+    <div class="box bg-primary">box-2 (if)</div>
+    } @else{
+    <div class="box bg-danger">box-2 (else)</div>
+    }
+  </div>
+
+  <div>
+    @if(val1==val2){
+    <div class="box bg-success">box-3</div>
+    }
+  </div>
+  <div>
+    @if(selectStatus=="active"){
+    <div class="box bg-success">active</div>
+    } @else if(selectStatus=="pending"){
+    <div class="box bg-warning">pending</div>
+    } @else if(selectStatus=="reject"){
+    <div class="box bg-danger">reject</div>
+    } @else{
+    <div class="box bg-info">select status</div>
+    }
+  </div>
+</div>
+<br />
+<div class="div-conatiner">
+  <div class="box-btn">
+    <button (click)="div1Show()">Show</button>
+    <button (click)="div1Hide()">hide</button>
+  </div>
+  <div class="box-btn" (click)="toggleBg()">
+    <button>toggle</button>
+  </div>
+  <div class="box-btn">
+    <input
+      style="width: 80px"
+      placeholder="val1"
+      type="text"
+      [(ngModel)]="val1"
+    />
+    <input
+      style="width: 80px"
+      placeholder="val2"
+      type="text"
+      [(ngModel)]="val2"
+    />
+  </div>
+  <div class="box-btn">
+    <select [(ngModel)]="selectStatus">
+      <option value="">Select Status</option>
+      <option value="active">active</option>
+      <option value="pending">pending</option>
+      <option value="reject">reject</option>
+    </select>
+  </div>
+</div>

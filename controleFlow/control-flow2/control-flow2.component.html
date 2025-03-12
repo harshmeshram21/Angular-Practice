@@ -1,0 +1,67 @@
+<div style="height: 200px">
+  <div class="bg-info" style="height: 100px">
+    <h2>Control-flow Statements</h2>
+    <h4>&#64;for &#64;switch</h4>
+  </div>
+</div>
+<h2>Item List</h2>
+<ul>
+  @for (item of items; track $index) {
+  <li>{{ item }}</li>
+  }
+</ul>
+
+<h2>Select an Item</h2>
+<select>
+  @for (item of items; track $index) {
+  <option>{{ item }}</option>
+  }
+</select>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>City</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (std of studentList; track $index) {
+    <tr>
+      <td>{{ $index + 1 }}</td>
+      <td>{{ std.name }}</td>
+      <td>{{ std.city }}</td>
+      <td>
+        {{ std.isActive ? "Active" : "Deactive" }}
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
+<br /><br />
+
+<div>
+  <label>Enter a number (1-7): </label>
+  <input type="number" [(ngModel)]="dayNumber" min="1" max="7" />
+</div>
+
+<h2>Selected Day:</h2>
+@switch (dayNumber) { @case (1) {
+<p>Monday</p>
+} @case (2) {
+<p>Tuesday</p>
+} @case (3) {
+<p>Wednesday</p>
+} @case (4) {
+<p>Thursday</p>
+} @case (5) {
+<p>Friday</p>
+} @case (6) {
+<p>Saturday</p>
+} @case (7) {
+<p>Sunday</p>
+} @default {
+<p>Invalid day. Enter a number between 1 and 7.</p>
+} }

@@ -1,0 +1,24 @@
+<div class="div-centre">
+  <h4>{{ name }}</h4>
+
+  <button (click)="changeName()">change name</button><br />
+
+  <div>
+    <p>one way only</p>
+    <input type="text" value="{{ name }}" />
+  </div>
+
+  <div>
+    <p>two way using ngModel</p>
+    <input type="text" [(ngModel)]="name" />
+  </div>
+  <br /><br />
+
+  <h3>using signal</h3>
+  <p>{{ city() }}</p>
+  <button class="btn-primary" (click)="changeCity()">change city</button>
+  <br />
+  <button class="btn btn-primary" (click)="nivigateToOneWay()">
+    Go To one-way-data-binding [using fn()]
+  </button>
+</div>

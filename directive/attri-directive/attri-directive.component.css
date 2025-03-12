@@ -1,0 +1,41 @@
+.div-conatiner {
+  display: flex;
+  justify-content: space-around;
+}
+.box {
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.box-btn {
+  height: 100px;
+  width: 200px;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  /* font-family: Arial, sans-serif; */
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #6a7d92;
+  color: white;
+  text-transform: uppercase;
+}

@@ -1,0 +1,41 @@
+.div-container {
+  display: flex;
+  justify-content: space-around;
+  /* gap: 30px; */
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-around;
+  /* gap: 130px; */
+  margin-right: 50px;
+}
+
+.box {
+  height: 100px;
+  width: 100px;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  /* font-family: Arial, sans-serif; */
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #6a7d92;
+  color: white;
+  text-transform: uppercase;
+}

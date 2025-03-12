@@ -1,0 +1,21 @@
+.div-conatiner {
+  display: flex;
+  justify-content: space-around;
+}
+.box {
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.box-btn {
+  height: 100px;
+  width: 200px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

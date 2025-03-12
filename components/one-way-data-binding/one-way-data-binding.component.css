@@ -1,0 +1,7 @@
+.div_center {
+  display: flex;
+  justify-content: center;
+}
+span {
+  cursor: pointer;
+}
