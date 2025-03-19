@@ -1,0 +1,274 @@
+<div class="container mt-5">
+  <h2 class="text-center text-primary">Angular Lifecycle Hooks</h2>
+  <p class="text-muted text-center">
+    Understand the purpose of each lifecycle hook in Angular.
+  </p>
+
+  <div class="accordion mt-4" id="lifecycleAccordion">
+    <!-- Constructor -->
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button
+          class="accordion-button"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#constructor"
+        >
+          <strong>1️⃣ Constructor</strong>
+        </button>
+      </h2>
+      <div
+        id="constructor"
+        class="accordion-collapse collapse show"
+        data-bs-parent="#lifecycleAccordion"
+      >
+        <div class="accordion-body">
+          <ul>
+            <li>Called before Angular initializes the component.</li>
+            <li>
+              Used to <strong>initialize class properties</strong> and
+              <strong>inject dependencies</strong>.
+            </li>
+            <li>Does <strong>not</strong> have access to Angular bindings.</li>
+            <li>
+              <strong>Use Case:</strong> Injecting services and initializing
+              variables.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ngOnInit -->
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#ngOnInit"
+        >
+          <strong>2️⃣ ngOnInit()</strong>
+        </button>
+      </h2>
+      <div
+        id="ngOnInit"
+        class="accordion-collapse collapse"
+        data-bs-parent="#lifecycleAccordion"
+      >
+        <div class="accordion-body">
+          <ul>
+            <li>Runs <strong>once</strong> after the constructor.</li>
+            <li>
+              Used for
+              <strong>initialization logic, fetching data from APIs</strong>.
+            </li>
+            <li>
+              <strong>Use Case:</strong> Making API calls, setting default
+              values.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ngDoCheck -->
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#ngDoCheck"
+        >
+          <strong>3️⃣ ngDoCheck()</strong>
+        </button>
+      </h2>
+      <div
+        id="ngDoCheck"
+        class="accordion-collapse collapse"
+        data-bs-parent="#lifecycleAccordion"
+      >
+        <div class="accordion-body">
+          <ul>
+            <li>Runs <strong>whenever Angular detects a change</strong>.</li>
+            <li>Used for <strong>manual change detection</strong>.</li>
+            <li>
+              <strong>Use Case:</strong> Detecting changes in deeply nested
+              objects.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ngAfterContentInit -->
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#ngAfterContentInit"
+        >
+          <strong>4️⃣ ngAfterContentInit()</strong>
+        </button>
+      </h2>
+      <div
+        id="ngAfterContentInit"
+        class="accordion-collapse collapse"
+        data-bs-parent="#lifecycleAccordion"
+      >
+        <div class="accordion-body">
+          <ul>
+            <li>
+              Runs
+              <strong
+                >after content projection (ng-content) is initialized</strong
+              >.
+            </li>
+            <li>
+              Executes only <strong>once</strong> after projected content is
+              set.
+            </li>
+            <li>
+              <strong>Use Case:</strong> Accessing projected content inside a
+              component.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ngAfterContentChecked -->
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#ngAfterContentChecked"
+        >
+          <strong>5️⃣ ngAfterContentChecked()</strong>
+        </button>
+      </h2>
+      <div
+        id="ngAfterContentChecked"
+        class="accordion-collapse collapse"
+        data-bs-parent="#lifecycleAccordion"
+      >
+        <div class="accordion-body">
+          <ul>
+            <li>
+              Runs
+              <strong>after Angular checks the projected content</strong>
+              (ng-content).
+            </li>
+            <li>Executes after every change detection cycle.</li>
+            <li>
+              <strong>Use Case:</strong> Responding to changes in projected
+              content.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ngAfterViewInit -->
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#ngAfterViewInit"
+        >
+          <strong>6️⃣ ngAfterViewInit()</strong>
+        </button>
+      </h2>
+      <div
+        id="ngAfterViewInit"
+        class="accordion-collapse collapse"
+        data-bs-parent="#lifecycleAccordion"
+      >
+        <div class="accordion-body">
+          <ul>
+            <li>
+              Runs
+              <strong>after child components and views are initialized</strong>.
+            </li>
+            <li>
+              Used to <strong>access ViewChild/ViewChildren</strong> elements.
+            </li>
+            <li>
+              <strong>Use Case:</strong> Getting DOM elements after they load.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ngAfterViewChecked -->
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#ngAfterViewChecked"
+        >
+          <strong>7️⃣ ngAfterViewChecked()</strong>
+        </button>
+      </h2>
+      <div
+        id="ngAfterViewChecked"
+        class="accordion-collapse collapse"
+        data-bs-parent="#lifecycleAccordion"
+      >
+        <div class="accordion-body">
+          <ul>
+            <li>Runs <strong>after every view update</strong>.</li>
+            <li>Used for <strong>handling dynamic content updates</strong>.</li>
+            <li>
+              <strong>Use Case:</strong> Handling UI updates that depend on
+              changes.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ngOnDestroy -->
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#ngOnDestroy"
+        >
+          <strong>8️⃣ ngOnDestroy()</strong>
+        </button>
+      </h2>
+      <div
+        id="ngOnDestroy"
+        class="accordion-collapse collapse"
+        data-bs-parent="#lifecycleAccordion"
+      >
+        <div class="accordion-body">
+          <ul>
+            <li>Runs <strong>before the component is destroyed</strong>.</li>
+            <li>
+              Used for
+              <strong>cleanup tasks, unsubscribing observables</strong>.
+            </li>
+            <li>
+              <strong>Use Case:</strong> Avoiding memory leaks by removing event
+              listeners.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

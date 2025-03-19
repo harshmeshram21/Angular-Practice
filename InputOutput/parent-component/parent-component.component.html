@@ -1,0 +1,11 @@
+<app-alret
+  [alertType]="'warning'"
+  [message]="'first reusable component'"
+></app-alret>
+<app-alret
+  [alertType]="'success'"
+  [message]="'second reusable component'"
+></app-alret>
+
+<app-mybtn (dataEvent)="receiveData($event)"></app-mybtn>
+<h5>Received Data: {{ receivedData }}</h5>

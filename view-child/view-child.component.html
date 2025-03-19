@@ -1,0 +1,28 @@
+<div class="container mt-2">
+  <div class="bg-secondary text-light p-3 rounded">
+    <h4>View Child</h4>
+    <p>
+      After innitializing the view Child we use aftrViewInit life cycle method,
+      aftrViewInit we use when we access the view child value
+    </p>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-3">
+      <label for="txt">sometext</label><br />
+      <input
+        #txt
+        name="txt"
+        value="namaskara"
+        type="text"
+        placeholder="text something..."
+      />
+    </div>
+    <div class="col-3">
+      <app-alret
+        [message]="'Hello from Alert'"
+        [alertType]="'success'"
+      ></app-alret>
+    </div>
+  </div>
+</div>

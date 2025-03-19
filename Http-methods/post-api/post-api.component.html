@@ -1,0 +1,81 @@
+<div class="container my-4">
+  <div class="bg-secondary text-white p-3 mb-4 rounded">
+    <h5>Post API</h5>
+  </div>
+
+  <div class="mb-4">
+    <form>
+      <div class="mb-3">
+        <label for="departmentName" class="form-label">Department Name</label>
+        <input
+          name="departmentName"
+          type="text"
+          class="form-control"
+          id="departmentName"
+          [(ngModel)]="deptObject.departmentName"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="departmentLogo" class="form-label">Department Logo</label>
+        <input
+          name="departmentLogo"
+          type="text"
+          class="form-control"
+          id="departmentLogo"
+          [(ngModel)]="deptObject.departmentLogo"
+          required
+        />
+      </div>
+
+      @if(showUpdateBtn){
+      <button
+        type="submit"
+        class="btn btn-warning"
+        (click)="updateDepartment()"
+      >
+        Update Department
+      </button>
+
+      }@else{
+      <button type="submit" class="btn btn-primary" (click)="addDepartment()">
+        Add Department
+      </button>
+
+      }
+    </form>
+  </div>
+
+  <div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Sr No.</th>
+          <th scope="col">Department Name</th>
+          <th scope="col">Department Logo</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dept of deptList; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ dept.departmentName }}</td>
+          <td>{{ dept.departmentLogo }}</td>
+          <td>
+            <button class="btn btn-info" (click)="editDepartment(dept)">
+              edit
+            </button>
+          </td>
+          <td>
+            <button
+              class="btn btn-danger"
+              (click)="deleteDepartment(dept.departmentId)"
+            >
+              delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

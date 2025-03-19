@@ -1,0 +1,184 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarTogglerDemo01"
+    aria-controls="navbarTogglerDemo01"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <a class="navbar-brand p-4" href="#">AngularCode</a>
+    <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+      <!-- Directives -->
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Directives
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" routerLink="structural-directive"
+              >Structural Directive</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="attribute-directive"
+              >Attribute Directive</a
+            >
+          </li>
+
+          <li>
+            <a class="dropdown-item" routerLink="ng-template"
+              >Ng-Template Directive</a
+            >
+          </li>
+
+          <li>
+            <a class="dropdown-item" routerLink="ng-container"
+              >Ng-Container Directive</a
+            >
+          </li>
+        </ul>
+      </li>
+
+      <!-- Data Binding -->
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Data Binding
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" routerLink="one-way-data-binding"
+              >One-Way Binding</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="two-way-data-binding"
+              >Two-Way Binding</a
+            >
+          </li>
+        </ul>
+      </li>
+
+      <!-- Conditional Rendering -->
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Conditional Rendering
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" routerLink="if-else-elseif"
+              >if-else-elseif</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="for-switch">for-switch</a>
+          </li>
+        </ul>
+      </li>
+
+      <!-- Forms -->
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Forms
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" routerLink="template-form"
+              >Template Form</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="reactive-form"
+              >Reactive Form</a
+            >
+          </li>
+        </ul>
+      </li>
+
+      <!-- Http Methods -->
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Http Methods
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" routerLink="get-api">Get Api</a>
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="post-api"
+              >Post/put/delete Api</a
+            >
+          </li>
+        </ul>
+      </li>
+
+      <!-- Miscellaneous -->
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Miscellaneous
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="pipe">Pipes</a></li>
+          <li>
+            <a class="dropdown-item" routerLink="life-cycle">Lifecycle Hooks</a>
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="input-output">Input/Output</a>
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="view-child">View Child</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <form class="d-flex">
+      <button class="btn btn-danger m-3" type="button" (click)="onLogout()">
+        Log Out
+      </button>
+    </form>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

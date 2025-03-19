@@ -1,0 +1,234 @@
+<div class="container my-4">
+  <div class="border border-dark bg-info p-3 mb-4 rounded">
+    <h3>Reactive Forms in Angular</h3>
+    <h4>Definition :</h4>
+    <h5>
+      A Reactive Form in Angular is a form where the structure, validation, and
+      data binding are managed programmatically in the TypeScript component
+      using Angular's <b>FormControl</b>, <b>FormGroup</b>, and
+      <b>FormBuilder</b> APIs.
+    </h5>
+  </div>
+  <form
+    class="row g-3 needs-validation"
+    [formGroup]="studentForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="col-md-4">
+      <label for="validationCustom01" class="form-label">First name</label>
+      <input
+        formControlName="firstName"
+        type="text"
+        class="form-control"
+        id="validationCustom01"
+        required
+      />
+      <div class="text-danger">
+        <span
+          *ngIf="studentForm.controls['firstName'].touched && studentForm.controls['firstName'].errors?.['required']"
+        >
+          Please enter the field
+        </span>
+        <span
+          *ngIf="studentForm.controls['firstName'].touched && studentForm.controls['firstName'].errors?.['minlength']"
+        >
+          Minimum 4 characters required
+        </span>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <label for="validationCustom02" class="form-label">Last name</label>
+      <input
+        formControlName="lastName"
+        type="text"
+        class="form-control"
+        id="validationCustom02"
+        required
+      />
+      <div class="text-danger">
+        <span
+          *ngIf="studentForm.controls['lastName'].touched && studentForm.controls['lastName'].errors?.['required']"
+        >
+          Please enter the field
+        </span>
+        <span
+          *ngIf="studentForm.controls['lastName'].touched && studentForm.controls['lastName'].errors?.['minlength']"
+        >
+          Minimum 4 characters required
+        </span>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <label for="validationCustomUsername" class="form-label"
+        >Username (Email)</label
+      >
+      <div class="input-group has-validation">
+        <span class="input-group-text" id="inputGroupPrepend">&#64;</span>
+        <input
+          formControlName="userName"
+          type="email"
+          class="form-control"
+          id="validationCustomUsername"
+          aria-describedby="inputGroupPrepend"
+          required
+        />
+        <div class="text-danger">
+          <span
+            *ngIf="studentForm.controls['userName'].touched && studentForm.controls['userName'].errors?.['required']"
+          >
+            Please enter the field
+          </span>
+          <span
+            *ngIf="studentForm.controls['userName'].touched && studentForm.controls['userName'].errors?.['email']"
+          >
+            Enter a valid email format
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="validationCustom03" class="form-label">City</label>
+      <input
+        formControlName="city"
+        type="text"
+        class="form-control"
+        id="validationCustom03"
+        required
+      />
+      <div class="text-danger">
+        <span
+          *ngIf="studentForm.controls['city'].touched && studentForm.controls['city'].errors?.['required']"
+        >
+          Please provide a valid city.
+        </span>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <label for="validationCustom04" class="form-label">State</label>
+      <select
+        formControlName="state"
+        class="form-select"
+        id="validationCustom04"
+        required
+      >
+        <option selected disabled value="">Choose...</option>
+        <option>Maharashtra</option>
+        <option>Goa</option>
+        <option>Karnataka</option>
+        <option>Madhya Pradesh</option>
+        <option>Delhi</option>
+      </select>
+      <div class="text-danger">
+        <span
+          *ngIf="studentForm.controls['state'].touched && studentForm.controls['state'].errors?.['required']"
+        >
+          Please select a valid state.
+        </span>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <label for="validationCustom05" class="form-label">Zip</label>
+      <input
+        formControlName="zip"
+        type="text"
+        class="form-control"
+        id="validationCustom05"
+        required
+        maxlength="6"
+      />
+      <div class="text-danger">
+        <span
+          *ngIf="studentForm.controls['zip'].touched && studentForm.controls['zip'].errors?.['required']"
+        >
+          Please provide a valid zip.
+        </span>
+        <span
+          *ngIf="studentForm.controls['zip'].touched && studentForm.controls['zip'].errors?.['pattern']"
+        >
+          Zip must be 6 digits.
+        </span>
+      </div>
+    </div>
+
+    <!-- <div class="col-md-6" formArrayName="skills">
+      <label class="form-label">Skills</label>
+      <input
+        [formControlName]="i"
+        type="text"
+        class="form-control"
+        required
+        *ngFor="let control of skills.controls; let i = index"
+      />
+    </div> -->
+    <div class="col-md-6" formArrayName="skills">
+      <label class="form-label">Skills</label>
+      <div *ngFor="let control of skills.controls; let i = index">
+        <input
+          [formControlName]="i"
+          type="text"
+          class="form-control"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="col-12">
+      <label for="fileInput" class="form-label">Upload File</label>
+      <input
+        type="file"
+        class="form-control"
+        (change)="onFileChange($event)"
+        id="fileInput"
+      />
+
+      <div class="text-danger">
+        <span
+          *ngIf=" studentForm.controls['file'].touched && studentForm.controls['file'].errors?.['required']"
+        >
+          File is required.
+        </span>
+        <span *ngIf="studentForm.controls['file'].errors?.['invalidType']">
+          Invalid file type. Only PDF is allowed.
+        </span>
+        <span *ngIf="studentForm.controls['file'].errors?.['maxSize']">
+          File size must be less than 2MB.
+        </span>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="form-check">
+        <input
+          formControlName="isAcceptTerm"
+          class="form-check-input"
+          type="checkbox"
+          id="invalidCheck"
+          required
+        />
+        <label class="form-check-label" for="invalidCheck">
+          Agree to terms and conditions
+        </label>
+        <div class="text-danger">
+          <span
+            *ngIf="studentForm.controls['isAcceptTerm'].touched && studentForm.controls['isAcceptTerm'].errors?.['requiredTrue']"
+          >
+            You must agree before submitting.
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>
+  </form>
+
+  <div class="p-5">
+    <h4 *ngIf="formvalue">{{ formvalue | json }}</h4>
+  </div>
+</div>

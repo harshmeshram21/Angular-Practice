@@ -1,0 +1,40 @@
+<div class="container my-4">
+  <div class="bg-secondary text-white p-3 mb-4 rounded">
+    <h5>Get Api</h5>
+  </div>
+
+  <div class="mb-4">
+    <button class="btn btn-success p-2 mb-3" (click)="getAllUser()">
+      Get User
+    </button>
+
+    @if (fetchError) {
+    <h3 class="text-danger">Failed fetching data</h3>
+    } @else if (userList.length > 0) {
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Username</th>
+          <th scope="col">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (user of userList; track user.id) {
+        <tr>
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+    } @else {
+    <h3 class="text-warning">
+      No users found. Click "Get User" to fetch data.
+    </h3>
+    }
+  </div>
+</div>

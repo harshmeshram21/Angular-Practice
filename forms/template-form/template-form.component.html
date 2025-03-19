@@ -1,0 +1,198 @@
+<div class="container my-4">
+  <div class="border border-dark bg-secondary text-light p-3 mb-4 rounded">
+    <h3>Template-Driven Forms in Angular</h3>
+    <h4>Definition :</h4>
+    <h5>
+      A Template-Driven Form in Angular is a form where the structure,
+      validation, and data binding are primarily handled in the HTML template
+      using Angular directives like ngModel, ngForm, and validation attributes.
+    </h5>
+  </div>
+  <div>
+    <form class="row g-3 needs-validation" novalidate="" #form="ngForm">
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">First name</label>
+        <input
+          [(ngModel)]="formObject.firstName"
+          #fName="ngModel"
+          name="firstName"
+          type="text"
+          class="form-control"
+          id="validationCustom01"
+          required
+          minlength="3"
+          maxlength="20"
+          spellcheck="false"
+          data-ms-editor="true"
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="text-danger">
+          @if(fName.touched && fName.errors?.['required']){
+          <p>first name required</p>
+          } @else if(fName.touched && fName.errors?.['minlength']){
+          <p>minimun 3 char required</p>
+          }
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Last name</label>
+        <input
+          [(ngModel)]="formObject.lastName"
+          name="lastName"
+          #lName="ngModel"
+          type="text"
+          class="form-control"
+          id="validationCustom02"
+          spellcheck="false"
+          data-ms-editor="true"
+          required
+          minlength="3"
+          maxlength="20"
+        />
+        <div class="text-danger">
+          @if(lName.touched && lName.errors?.['required']){
+          <p>last name required</p>
+          } @else if(lName.touched && lName.errors?.['minlength']){
+          <p>minimun 3 char required</p>
+          }
+        </div>
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustomUsername" class="form-label"
+          >Username</label
+        >
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend">&#64;</span>
+          <div>
+            <input
+              name="userName"
+              [(ngModel)]="formObject.userName"
+              #userName="ngModel"
+              type="text"
+              class="form-control"
+              id="validationCustomUsername"
+              aria-describedby="inputGroupPrepend"
+              required
+              spellcheck="false"
+              data-ms-editor="true"
+            />
+          </div>
+          <div class="text-danger">
+            @if(userName.touched && userName.errors?.['required']){
+            <p>please filled the username filled</p>
+            }
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="validationCustom03" class="form-label">City</label>
+        <div>
+          <input
+            name="city"
+            #city="ngModel"
+            [(ngModel)]="formObject.city"
+            type="text"
+            class="form-control"
+            id="validationCustom03"
+            required
+            spellcheck="false"
+            data-ms-editor="true"
+          />
+        </div>
+        <div class="text-danger">
+          @if(city.touched&& city.errors?.['required']){
+          <p>please enter the city</p>
+          }
+        </div>
+
+        <div class="invalid-feedback">Please provide a valid city.</div>
+      </div>
+      <div class="col-md-3">
+        <label for="validationCustom04" class="form-label">State</label>
+        <select
+          name="state"
+          [(ngModel)]="formObject.state"
+          class="form-select"
+          id="validationCustom04"
+          required
+          #state="ngModel"
+        >
+          <option selected="" disabled value="">Choose...</option>
+          <option>Maharastra</option>
+          <option>Goa</option>
+          <option>Karnataka</option>
+          <option>Madhya Pradesh</option>
+          <option>Delhi</option>
+        </select>
+        <div class="invalid-feedback">Please select a valid state.</div>
+        <div class="text-danger">
+          @if(state.touched&& state.errors?.['required']){
+          <p>please select the state</p>
+          }
+        </div>
+      </div>
+      <div class="col-md-3">
+        <label for="validationCustom05" class="form-label">Zip</label>
+        <input
+          [(ngModel)]="formObject.zip"
+          name="zip"
+          #zip="ngModel"
+          type="text"
+          class="form-control"
+          id="validationCustom05"
+          required
+          maxlength="6"
+          minlength="6"
+          spellcheck="false"
+          data-ms-editor="true"
+        />
+        <div class="text-danger">
+          @if(zip.touched&& zip.errors?.['required']){
+          <p>please select the state</p>
+          } @else if(zip.touched&& zip.errors?.['minlength']){
+          <p>please enter 6 digit code</p>
+          }
+        </div>
+        <!-- <div class="invalid-feedback">Please provide a valid zip.</div> -->
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input
+            required
+            [(ngModel)]="formObject.isAcceptTerm"
+            name="isAcceptTerm"
+            #isAcceptTerm="ngModel"
+            class="form-check-input"
+            type="checkbox"
+            id="invalidCheck"
+          />
+          <label class="form-check-label" for="invalidCheck">
+            Agree to terms and conditions
+          </label>
+          <div class="text-danger">
+            @if(isAcceptTerm.touched && isAcceptTerm.errors?.['required']){
+            <p>please select checkbox</p>
+            }
+          </div>
+          <div class="invalid-feedback">You must agree before submitting.</div>
+        </div>
+      </div>
+      <div class="col-12">
+        <button
+          class="btn btn-primary m-3"
+          type="submit"
+          (click)="onSubmit()"
+          [disabled]="form.invalid"
+        >
+          Submit form
+        </button>
+
+        <button class="btn btn-secondary" type="reset">reset form</button>
+      </div>
+    </form>
+  </div>
+  <div class="pt-5">
+    <h5>{{ formValue | json }}</h5>
+  </div>
+</div>

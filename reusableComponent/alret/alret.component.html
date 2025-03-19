@@ -1,0 +1,10 @@
+<div
+  class="alert"
+  role="alert"
+  [ngClass]="{
+    'alert-warning': alertType == 'warning',
+    'alert-success': alertType == 'success'
+  }"
+>
+  {{ message }}
+</div>
