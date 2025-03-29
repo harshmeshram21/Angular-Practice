@@ -19,6 +19,11 @@ import { ViewChildComponent } from "./view-child/view-child.component";
 import { LoginComponent } from "./login/login.component";
 import { LayoutComponent } from "./layout/layout.component";
 import { authGuard } from "./service/auth.guard";
+import { CounterAppComponent } from "./counter-app/counter-app.component";
+import { SignalComponent } from "./signal/signal.component";
+import { ObservablesComponent } from "./observables/observables.component";
+import { AddListComponent } from "./MockTest/add-list/add-list.component";
+import { DisplayListComponent } from "./MockTest/display-list/display-list.component";
 
 export const routes: Routes = [
   {
@@ -36,6 +41,12 @@ export const routes: Routes = [
     component: LayoutComponent,
     canActivate: [authGuard],
     children: [
+      {
+        path: "counter-app",
+        component: CounterAppComponent,
+      },
+      { path: "add-list", component: AddListComponent },
+      { path: "emp-list", component: DisplayListComponent },
       {
         path: "structural-directive",
         component: NgifDirectiveComponent,
@@ -71,6 +82,15 @@ export const routes: Routes = [
       {
         path: "pipe",
         component: PipeComponent,
+      },
+      {
+        path: "observables",
+        component: ObservablesComponent,
+      },
+
+      {
+        path: "signal",
+        component: SignalComponent,
       },
       {
         path: "view-child",

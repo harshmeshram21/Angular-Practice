@@ -1,0 +1,22 @@
+<p>display-list works!</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Employee Name</th>
+      <th>Employee Role</th>
+      <th>Skills</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employees">
+      <td>{{ emp.employeeName }}</td>
+      <td>{{ emp.employeeRole | role }}</td>
+      <td>
+        <ul>
+          <li *ngFor="let skill of emp.skills">{{ skill }}</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -8,13 +8,16 @@
     </h5>
   </div>
 
+  <h1 class="mb-3">{{ currentRole }}</h1>
+
   <h2 class="mb-3">Built-in Pipes in Angular</h2>
 
   <div class="mb-4">
     <h3>String Pipes</h3>
     <p>Original: {{ message }}</p>
-    <p>Uppercase: {{ message | uppercase }}</p>
     <p>Lowercase: {{ message | lowercase }}</p>
+    <p>Uppercase: {{ message | uppercase }}</p>
+    <p>Lowercase customePipe: {{ message | upparCasePipe }}</p>
     <p>Title Case: {{ message | titlecase }}</p>
   </div>
 

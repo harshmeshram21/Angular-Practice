@@ -8,6 +8,7 @@ import { NgifDirectiveComponent } from "./directive/ngif-directive/ngif-directiv
 import { AttriDirectiveComponent } from "./directive/attri-directive/attri-directive.component";
 import { RouterEvent, RouterLink, RouterOutlet } from "@angular/router";
 
+
 @Component({
   selector: "app-root",
   imports: [RouterOutlet],
@@ -15,12 +16,12 @@ import { RouterEvent, RouterLink, RouterOutlet } from "@angular/router";
   styleUrl: "./app.component.css",
 })
 export class AppComponent {
-  title = "angular_demo";
-  name: string = "harsh";
-  textColor: string = "text-primary";
-  bgColor: string = "bg-info";
-
-  getHeight(): string {
-    return `im 5'5`;
-  }
+  
+  // title = "angular_demo";
+  // name: string = "harsh";
+  // textColor: string = "text-primary";
+  // bgColor: string = "bg-info";
+  // getHeight(): string {
+  //   return `im 5'5`;
+  // }
 }

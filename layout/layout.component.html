@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark">
   <button
     class="navbar-toggler"
     type="button"
@@ -10,13 +10,47 @@
   >
     <span class="navbar-toggler-icon"></span>
   </button>
+
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <a class="navbar-brand p-4" href="#">AngularCode</a>
-    <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-      <!-- Directives -->
-      <li class="nav-item dropdown">
+    <ul class="navbar-nav navbar-nav-scroll me-auto mt-2 mt-lg-0">
+      <li class="dropdown nav-item">
         <a
-          class="nav-link dropdown-toggle"
+          class="dropdown-toggle nav-link"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Mock Test
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="add-list">addList</a></li>
+        </ul>
+      </li>
+
+      <!-- Apps -->
+      <li class="dropdown nav-item">
+        <a
+          class="dropdown-toggle nav-link"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Apps
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" routerLink="counter-app">Counter App</a>
+          </li>
+        </ul>
+      </li>
+
+      <!-- Directives -->
+      <li class="dropdown nav-item">
+        <a
+          class="dropdown-toggle nav-link"
           href="#"
           role="button"
           data-bs-toggle="dropdown"
@@ -35,13 +69,11 @@
               >Attribute Directive</a
             >
           </li>
-
           <li>
             <a class="dropdown-item" routerLink="ng-template"
               >Ng-Template Directive</a
             >
           </li>
-
           <li>
             <a class="dropdown-item" routerLink="ng-container"
               >Ng-Container Directive</a
@@ -51,9 +83,9 @@
       </li>
 
       <!-- Data Binding -->
-      <li class="nav-item dropdown">
+      <li class="dropdown nav-item">
         <a
-          class="nav-link dropdown-toggle"
+          class="dropdown-toggle nav-link"
           href="#"
           role="button"
           data-bs-toggle="dropdown"
@@ -76,9 +108,9 @@
       </li>
 
       <!-- Conditional Rendering -->
-      <li class="nav-item dropdown">
+      <li class="dropdown nav-item">
         <a
-          class="nav-link dropdown-toggle"
+          class="dropdown-toggle nav-link"
           href="#"
           role="button"
           data-bs-toggle="dropdown"
@@ -99,9 +131,9 @@
       </li>
 
       <!-- Forms -->
-      <li class="nav-item dropdown">
+      <li class="dropdown nav-item">
         <a
-          class="nav-link dropdown-toggle"
+          class="dropdown-toggle nav-link"
           href="#"
           role="button"
           data-bs-toggle="dropdown"
@@ -123,10 +155,10 @@
         </ul>
       </li>
 
-      <!-- Http Methods -->
-      <li class="nav-item dropdown">
+      <!-- HTTP Methods -->
+      <li class="dropdown nav-item">
         <a
-          class="nav-link dropdown-toggle"
+          class="dropdown-toggle nav-link"
           href="#"
           role="button"
           data-bs-toggle="dropdown"
@@ -135,21 +167,19 @@
           Http Methods
         </a>
         <ul class="dropdown-menu">
-          <li>
-            <a class="dropdown-item" routerLink="get-api">Get Api</a>
-          </li>
+          <li><a class="dropdown-item" routerLink="get-api">Get API</a></li>
           <li>
             <a class="dropdown-item" routerLink="post-api"
-              >Post/put/delete Api</a
+              >Post/Put/Delete API</a
             >
           </li>
         </ul>
       </li>
 
       <!-- Miscellaneous -->
-      <li class="nav-item dropdown">
+      <li class="dropdown nav-item">
         <a
-          class="nav-link dropdown-toggle"
+          class="dropdown-toggle nav-link"
           href="#"
           role="button"
           data-bs-toggle="dropdown"
@@ -168,10 +198,29 @@
           <li>
             <a class="dropdown-item" routerLink="view-child">View Child</a>
           </li>
+          <li>
+            <a class="dropdown-item" routerLink="signal">Signal</a>
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="observables">Obervables</a>
+          </li>
         </ul>
       </li>
     </ul>
-    <form class="d-flex">
+
+    <form class="d-flex g-1">
+      <div>
+        <select
+          class="mt-4"
+          [(ngModel)]="selectedRole"
+          (ngModelChange)="onRoleChange($event)"
+          name="selectedRole"
+        >
+          <option value="">select role</option>
+          <option value="admin">Admin</option>
+          <option value="user">User</option>
+        </select>
+      </div>
       <button class="btn btn-danger m-3" type="button" (click)="onLogout()">
         Log Out
       </button>
